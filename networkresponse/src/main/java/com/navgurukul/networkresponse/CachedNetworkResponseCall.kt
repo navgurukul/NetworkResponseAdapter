@@ -1,16 +1,16 @@
-package com.navgurukul.networkresponseadapter
+package com.navgurukul.networkresponse
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import okhttp3.Request
 import okhttp3.ResponseBody
-import okhttp3.Timeout
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Converter
 import retrofit2.Response
 import java.lang.reflect.Type
+import java.util.concurrent.TimeUnit
 
 /**
  * A Call implementation that supports caching for NetworkResponse
@@ -75,5 +75,5 @@ internal class CachedNetworkResponseCall<S : Any, E : Any>(
 
     override fun request(): Request = backingCall.request()
 
-    override fun timeout(): Timeout = backingCall.timeout()
+    override fun timeout(): okio.Timeout = backingCall.timeout()
 }

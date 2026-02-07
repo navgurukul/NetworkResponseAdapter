@@ -1,17 +1,16 @@
-package com.navgurukul.networkresponseadapter
+package com.navgurukul.networkresponse
 
 import kotlinx.coroutines.Deferred
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.CallAdapter
 import retrofit2.Retrofit
-import java.lang.annotation.Annotation
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 
 class NetworkResponseAdapterFactory : CallAdapter.Factory() {
 
-    override fun get(returnType: Type, annotations: Array<Annotation>, retrofit: Retrofit): CallAdapter<*, *>? {
+    override fun get(returnType: Type, annotations: Array<out Annotation>, retrofit: Retrofit): CallAdapter<*, *>? {
 
         if (returnType !is ParameterizedType) {
             // returnType must be parameterized. Raw types are not supported

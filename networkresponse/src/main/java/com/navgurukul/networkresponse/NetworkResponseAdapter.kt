@@ -1,4 +1,4 @@
-package com.navgurukul.networkresponseadapter
+package com.navgurukul.networkresponse
 
 import retrofit2.Call
 import retrofit2.CallAdapter

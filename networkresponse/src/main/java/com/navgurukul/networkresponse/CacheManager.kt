@@ -1,4 +1,4 @@
-package com.navgurukul.networkresponseadapter
+package com.navgurukul.networkresponse
 
 import android.content.Context
 import androidx.room.Room

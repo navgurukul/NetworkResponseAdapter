@@ -1,8 +1,7 @@
-package com.navgurukul.networkresponseadapter
+package com.navgurukul.networkresponse
 
 import okhttp3.Request
 import okhttp3.ResponseBody
-import okhttp3.Timeout
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Converter
@@ -54,5 +53,5 @@ internal class NetworkResponseCall<S : Any, E : Any>(
 
     override fun request(): Request = backingCall.request()
 
-    override fun timeout(): Timeout = backingCall.timeout()
+    override fun timeout(): okio.Timeout = backingCall.timeout()
 }

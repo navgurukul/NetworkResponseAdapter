@@ -1,13 +1,18 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)  // Use alias instead of specifying version
-    id("kotlin-kapt")
     id("maven-publish")
 }
 
 android {
     namespace = "com.navgurukul.networkresponse"
     compileSdk = 34
+    
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 
     defaultConfig {
         minSdk = 21
@@ -30,10 +35,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-
-    kotlinOptions {
-        jvmTarget = "17"
-    }
 }
 
 dependencies {
@@ -47,7 +48,6 @@ dependencies {
     // Room - for caching
     api("androidx.room:room-runtime:2.6.1")
     api("androidx.room:room-ktx:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
 
     // Coroutines - for async operations
     api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
@@ -71,11 +71,13 @@ afterEvaluate {
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
-
-                groupId = "com.github.navgurukul"  // Change to your GitHub username
+                
+                groupId = "com.github.navgurukul"
                 artifactId = "network-response-adapter"
                 version = "1.0.0"
             }
         }
     }
 }
+
+

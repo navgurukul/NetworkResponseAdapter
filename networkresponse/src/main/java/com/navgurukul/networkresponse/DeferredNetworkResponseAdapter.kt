@@ -1,4 +1,4 @@
-package com.navgurukul.networkresponseadapter
+package com.navgurukul.networkresponse
 
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Deferred

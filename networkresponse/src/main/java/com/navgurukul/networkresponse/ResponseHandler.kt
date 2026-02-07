@@ -1,4 +1,4 @@
-package com.navgurukul.networkresponseadapter
+package com.navgurukul.networkresponse
 
 import okhttp3.ResponseBody
 import retrofit2.Converter
