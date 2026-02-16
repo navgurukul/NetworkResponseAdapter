@@ -1,7 +1,7 @@
 # NetworkResponse Adapter 🚀
 
 [![](https://jitpack.io/v/navgurukul/NetworkResponseAdapter.svg)](https://jitpack.io/#navgurukul/NetworkResponseAdapter)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 A powerful Retrofit CallAdapter for elegant and type-safe network response handling in Android applications. Say goodbye to messy try-catch blocks and hello to clean, expressive error handling!
 
@@ -370,7 +370,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the AGPL-3.0 License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
