@@ -1,0 +1,32 @@
+title: NetworkResponse Adapter
+description: Type-safe Retrofit CallAdapter for elegant network response handling
+theme: jekyll-theme-cayman
+show_downloads: true
+github:
+  repository_url: https://github.com/navgurukul/NetworkResponseAdapter
+  zip_url: https://github.com/navgurukul/NetworkResponseAdapter/zipball/main
+  tar_url: https://github.com/navgurukul/NetworkResponseAdapter/tarball/main
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Installation
+    url: /installation
+  - title: Quick Start
+    url: /quickstart
+  - title: Advanced
+    url: /advanced
+  - title: API Reference
+    url: /api
+
+# Plugins
+plugins:
+  - jekyll-relative-links
+  - jekyll-seo-tag
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
