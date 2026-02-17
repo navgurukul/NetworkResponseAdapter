@@ -65,7 +65,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
 
-// Publishing configuration for JitPack
+// Publishing configuration for JitPack and GitHub Packages
 afterEvaluate {
     publishing {
         publications {
@@ -75,6 +75,45 @@ afterEvaluate {
                 groupId = "com.github.navgurukul"
                 artifactId = "network-response-adapter"
                 version = "1.0.0"
+                
+                pom {
+                    name.set("NetworkResponse Adapter")
+                    description.set("A powerful Retrofit CallAdapter for elegant and type-safe network response handling")
+                    url.set("https://github.com/navgurukul/NetworkResponseAdapter")
+                    
+                    licenses {
+                        license {
+                            name.set("GNU Affero General Public License v3.0")
+                            url.set("https://www.gnu.org/licenses/agpl-3.0.html")
+                        }
+                    }
+                    
+                    developers {
+                        developer {
+                            id.set("navgurukul")
+                            name.set("NavGurukul")
+                            url.set("https://github.com/navgurukul")
+                        }
+                    }
+                    
+                    scm {
+                        connection.set("scm:git:git://github.com/navgurukul/NetworkResponseAdapter.git")
+                        developerConnection.set("scm:git:ssh://github.com/navgurukul/NetworkResponseAdapter.git")
+                        url.set("https://github.com/navgurukul/NetworkResponseAdapter")
+                    }
+                }
+            }
+        }
+        
+        repositories {
+            // GitHub Packages
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/navgurukul/NetworkResponseAdapter")
+                credentials {
+                    username = System.getenv("GITHUB_ACTOR") ?: project.findProperty("gpr.user") as String?
+                    password = System.getenv("GITHUB_TOKEN") ?: project.findProperty("gpr.token") as String?
+                }
             }
         }
     }
